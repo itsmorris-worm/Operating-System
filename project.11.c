@@ -1,10 +1,12 @@
 /*Question number 11.
 //Chandan Sharma(11812766)
 //CSE_316 Assignment
-Suppose that a disk has 5,000 cylinders, numbered 0 to 4999. The drive is currently serving a request at cylinder 143,
-and the previous request at cylinder 125. The queue of the pending requests, in FIFO. */
+//Suppose that a disk has 5,000 cylinders, numbered 0 to 4999. The drive is currently serving a request at cylinder 143,
+//and the previous request at cylinder 125. The queue of the pending requests, in FIFO.
+*/
 
 //start
+
 #include<stdio.h>
 #include<math.h>
 int main()
@@ -80,12 +82,12 @@ int main()
 	
 //Checking for direction where to move on the basis of previous and current request/position
 if((pre_request-cur_request)<0)
-r1_l0=1;//r1 means for right ->1  
+r1_l0=1;//r1 means moving right(greater side) of current head -->1  
 else
-r1_l0=0;	//l0 mean for left ->0
+r1_l0=0;	//l0 mean moving left(lower side) of current head -->0
 	switch(r1_l0)
 	{
-		case 0: //Start with left lower side of current position and move till end
+		case 0: //first move in left lower side of current position(head) and move till end i.e., 0 for left
 			for(i=0;i<j;i++)
 			{
 				final[x]=left[i];
@@ -93,13 +95,13 @@ r1_l0=0;	//l0 mean for left ->0
 			}
 			final[x]=0;
 			x++;
-			for(i=0;i<k;i++) //Then move towars the right upper side till the max request in the queue
+			for(i=0;i<k;i++) //Then move towars the right(upper side) till the max request in the queue get scanned
 			{
 				final[x]=right[i];
 				x++;
 			}
 			break;
-		case 1: //Start with right upper side of current position and move till end
+		case 1: //first move in right upper side of current posiyion(head) and move till end i.e., upper limit-1 for right
 			for(i=0;i<k;i++)
 			{
 				final[x]=right[i];
@@ -107,7 +109,7 @@ r1_l0=0;	//l0 mean for left ->0
 			}
 			final[x]=upr_limit-1;
 			x++;
-			for(i=0;i<j;i++)  //Then mover towards the left lower side till the min request in the queue.
+			for(i=0;i<j;i++)  //Then move towards the left(lower side) till the min request in the queue get scanned
 			{
 				final[x]=left[i];
 				x++;
@@ -121,7 +123,7 @@ printf("\n\tMOVES TOWARS RIGHT SATISFYING ALL REQUEST TILL END OF CYLINDER AND T
 if(r1_l0==0)
 printf("\n\tMOVES TOWARS LEFT SATISFYING ALL REQUEST TILL END 0 AND THE MOVES TOWARD RIGHT TILL THE MAX REQUEST(MOVE <--- THEN --->)\n");
 //Final queue with all the traversed request
-	printf("\n\n\tTHE FINAL QUEUE WITH SATISFYING ALL THE PENDING REQUEST IS : \n\n");
+	printf("\n\n\tTHE FINAL QUEUE WITH SATISFIED AND SCANNED ALL REQUEST OF PENDING QUEUE IN ORDER IS : \n\n");
 	distance=distance+abs(cur_request-final[0]);  //Calculating diatance
 	printf("\t%d , %d",cur_request,final[0]);
 	for(i=1;i<x;i++)
@@ -133,6 +135,7 @@ printf("\n\tMOVES TOWARS LEFT SATISFYING ALL REQUEST TILL END 0 AND THE MOVES TO
 	printf("\n\nTOTAL DISTANCE(IN CYLINDER) THE DISK ARM MOVES : %d\n",distance);
 
 }
+
 //Done
 //End of program
 
