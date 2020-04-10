@@ -10,12 +10,12 @@
 
 
 //start
-#include <iostream>
-#include <bits/stdc++.h> 
+#include <iostream>    //explicitly using iostream to make more fast the basic input out put service
+#include <bits/stdc++.h> //for including every standard library for easy running
 
 using namespace std; 
 
-int t_request;
+int t_request; //t_request is total number of teacher and student and combindily consider it the total number of request
   
 
 struct person //to hold inputs
@@ -84,8 +84,8 @@ int temp1[30],tarr_time[30],temp[30]; //declaring temp waiting time and turnarou
 
 double wait_avg=0,tarr_avg=0,student_wt=0; 
 
-//temp1=temp waiting time
-//temp=temp turnaround time
+//temp1=temprory waiting time
+//temp=temprory turnaround time
 //temp2=temprorary variable
 get_temp1_time(temp1); //function call for temp waiting time for starting and complition time calculation 
  
@@ -118,7 +118,7 @@ for(int i=0;i<t_request;i++)
 		    
 	tarr_time[i]=comp_time[i]-serve[i].arr_time;   //filling turnaround array
 	
-	if(t_request==1)
+	if(t_request==1)  //special case, if there is only 1 request
 	{
 		 if(serve[i].arr_time==0)
 	     {
@@ -194,8 +194,8 @@ cout<<"ENTER THE ARRIVAL TIME FOR "<<p+1<<" :  ";
 cin>>arrivaltime[p];
 cout<<"ENTER THE BURST TIME FOR "<<p+1<<" :  ";
 cin>>bursttime[p]; 
-cout<<"ENTER THE PRIORITY OF PROCESS "<<p+1<<"(TEACHER=2 & STUDENT=1)"" :  ";
-cin>>priority[p];
+cout<<"ENTER THE PRIORITY OF PROCESS "<<p+1<<"(TEACHER=2 & STUDENT=1)"" :  ";  //teachers are respective so they will be given more 
+cin>>priority[p];    //higher the number higher the priority                   //priority in case arrival time is same         
 cout<<endl; 
 }
 for(int i=0;i<t_request;i++) 
