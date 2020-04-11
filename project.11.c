@@ -64,7 +64,6 @@ int main()
 		}
 	}
 	
-
 //Arranging requests in right side upper queue in ascending order for easy pic up
 	for(i=0;i<=k;i++)
 	{
@@ -78,8 +77,7 @@ int main()
 			}
 		}
 	}
-	
-	
+		
 //Checking for direction where to move on the basis of previous and current request/position
 if((pre_request-cur_request)<0)
 r1_l0=1;//r1 means moving right(greater side) of current head -->1  
@@ -123,17 +121,15 @@ printf("\n\tMOVES TOWARS RIGHT SATISFYING ALL REQUEST TILL END OF CYLINDER AND T
 if(r1_l0==0)
 printf("\n\tMOVES TOWARS LEFT SATISFYING ALL REQUEST TILL END 0 AND THE MOVES TOWARD RIGHT TILL THE MAX REQUEST(MOVE <--- THEN --->)\n");
 //Final queue with all the traversed request
-	printf("\n\n\tTHE FINAL QUEUE WITH SATISFIED AND SCANNED ALL REQUEST OF PENDING QUEUE IN ORDER IS : \n\n");
+printf("\n\n\tTHE FINAL QUEUE WITH SATISFIED AND SCANNED ALL REQUEST OF PENDING QUEUE IN ORDER IS : \n\n");
 	distance=distance+abs(cur_request-final[0]);  //Calculating diatance
 	printf("\t%d , %d",cur_request,final[0]);
 	for(i=1;i<x;i++)
 	    {
 	    	distance=distance+abs(final[i]-final[i-1]);
 	    	printf(" , %d",final[i]);
-	    }
-	 
-	printf("\n\nTOTAL DISTANCE(IN CYLINDER) THE DISK ARM MOVES : %d\n",distance);
-
+	    }	 
+printf("\n\nTOTAL DISTANCE(IN CYLINDER) THE DISK ARM MOVES : %d\n",distance);
 }
 
 //Done
