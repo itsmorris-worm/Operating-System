@@ -15,7 +15,7 @@
 
 using namespace std; 
 
-int t_request; //t_request is total number of teacher and student and combindily consider it the total number of request
+int t_request; //t_request is the total number of teacher and student, combindily consider it the total number of request
   
 
 struct person //to hold inputs
@@ -46,10 +46,8 @@ void get_temp1_time(int temp1[])
 
 int cum_burst[30]; //cum_burst array to store cummatative burst time
 
-
 cum_burst[0]=0; 
 temp1[0]=0; 
-
 
 for(int i=1;i<t_request;i++) 
 { 
@@ -57,7 +55,6 @@ cum_burst[i]=serve[i-1].bru_time+cum_burst[i-1];
 
 temp1[i]=cum_burst[i]-serve[i].arr_time; 
 
-	
 	if(temp1[i]<0) 
 	{ 
 	temp1[i]=0; //if temp waiting chage to 0 if negative
@@ -68,18 +65,14 @@ temp1[i]=cum_burst[i]-serve[i].arr_time;
 
 void get_temp_time(int temp[],int temp1[]) 
 { 
-
-
 for(int i=0;i<t_request;i++) //temp turnaround array
 { 
 	temp[i]=temp1[i]+serve[i].bru_time; 
-} 
-	
+} 	
 } 
 
 void calculation() 
 { 
-
 int temp1[30],tarr_time[30],temp[30]; //declaring temp waiting time and turnaround around time
 
 double wait_avg=0,tarr_avg=0,student_wt=0; 
@@ -99,17 +92,17 @@ for(int i=1;i<t_request;i++)
 	     if(serve[i].arr_time==0)
 	     {
 	     	strt_time[0]=0; 
-            comp_time[0]=strt_time[0]+temp[0];
+                comp_time[0]=strt_time[0]+temp[0];
 	        strt_time[i]=comp_time[i-1]; 
-		    comp_time[i]=strt_time[i]+temp[i]-temp1[i];	
-		 }
-		 else
-		 {
-		 	strt_time[0]=1; 
-            comp_time[0]=strt_time[0]+temp[0];
-	     	strt_time[i]=comp_time[i-1]; 
-	    	comp_time[i]=strt_time[i]+temp[i]-temp1[i];
+	        comp_time[i]=strt_time[i]+temp[i]-temp1[i];	
 	     }
+	     else
+		 {
+		    strt_time[0]=1; 
+                    comp_time[0]=strt_time[0]+temp[0];
+	     	    strt_time[i]=comp_time[i-1]; 
+	    	    comp_time[i]=strt_time[i]+temp[i]-temp1[i];
+	         }
 
 	} 
 int wait[30];
@@ -195,7 +188,7 @@ cin>>arrivaltime[p];
 cout<<"ENTER THE BURST TIME FOR "<<p+1<<" :  ";
 cin>>bursttime[p]; 
 cout<<"ENTER THE PRIORITY OF PROCESS "<<p+1<<"(TEACHER=2 & STUDENT=1)"" :  ";  //teachers are respective so they will be given more 
-cin>>priority[p];    //higher the number higher the priority                   //priority in case arrival time is same         
+cin>>priority[p];    //higher the number higher the priority concept           //priority in case arrival time is same         
 cout<<endl; 
 }
 for(int i=0;i<t_request;i++) 
@@ -217,5 +210,3 @@ return 0;
 //Done
 //End of program
  
-
-
