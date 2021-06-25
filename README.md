@@ -18,8 +18,7 @@ total distance(in terms of cylinder ) the user needs to travel.
 ## Steps:
 -> Take the current and the previous request from the userit will give us direction to move and the 
 current head.
--> Take a queue ‘que’ and take the pending request as input.
--> Take a queue ‘left’ to separate the request lesser then current head.
+-> Take a queue ‘que’ and take the pending request as input.                                                                                                                     -> Take a queue ‘left’ to separate the request lesser then current head.
 -> Take a queue ‘right’ to separate the request bigger than current head.
 -> Shorting the request in queue ‘left’ in descending order as it helps in easy pick-up of request.
 -> Shorting the request on queue ‘right’ in ascending order as it helps in easy pick-up of request.
