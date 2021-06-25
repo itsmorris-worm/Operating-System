@@ -44,7 +44,6 @@ If a teacher is being served at the food mess and during the period when he is b
 - Priority Scheduling, a scheduling that is based on priority means a scheduler selects the tasks to work as per the priority.
 Here, as per the problem above.to minimize the waiting time of students, each request(either teacher or student) is served on the basis of their first come first serve with non preemptive scheduling implementation…means after serving on the basis of FCFS, with the non preemptive approach it serve on the basis of as teacher/student, one by one. It also calculate the minimum time students require to wait until each student being served.
 ### Steps:
-Steps:
 - First make a queue for the total number of process request (Teacher+student).
 - Then for each process assign a priority(1 for teacher/2 for student) which signify whether it is a teacher request or a student request.
 - T0 minimise the waiting time for the student we make sure that the one who came first will be served 1st on the basis of their arrival time.
