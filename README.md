@@ -17,38 +17,38 @@ being carried out. The algorithm has to be design in such a way that the user ne
 total distance(in terms of cylinder ) the user needs to travel.
 ## Steps:
 <body>
--> Take the current and the previous request from the userit will give us direction to move and the 
+- Take the current and the previous request from the userit will give us direction to move and the 
 current head.
--> Take a queue ‘que’ and take the pending request as input.                                                                                                                     -> Take a queue ‘left’ to separate the request lesser then current head.
--> Take a queue ‘right’ to separate the request bigger than current head.
--> Shorting the request in queue ‘left’ in descending order as it helps in easy pick-up of request.
--> Shorting the request on queue ‘right’ in ascending order as it helps in easy pick-up of request.
--> Take a final queue ‘final’ to store the scanned request (satisfied through scanning).
--> Previous request – current head gives the direct to move
- If the above value<0, then moves toward right first.
- Else if above value>0, then moves toward left first.
--> Start with the current head traverse through the ‘right’ queue and the ‘left’ by popping request one 
+- Take a queue ‘que’ and take the pending request as input.
+- Take a queue ‘left’ to separate the request lesser then current head.
+- Take a queue ‘right’ to separate the request bigger than current head.
+- Shorting the request in queue ‘left’ in descending order as it helps in easy pick-up of request.
+- Shorting the request on queue ‘right’ in ascending order as it helps in easy pick-up of request.
+- Take a final queue ‘final’ to store the scanned request (satisfied through scanning).
+- Previous request – current head gives the direct to move
+- If the above value<0, then moves toward right first. Else if above value>0, then moves toward left first.
+- Start with the current head traverse through the ‘right’ queue and the ‘left’ by popping request one 
 by one, if above value<0. Push one by one in ‘final’ queue.
--> Start with the current head traverse through the ‘left’ queue and the ‘right’ by popping request one 
+- Start with the current head traverse through the ‘left’ queue and the ‘right’ by popping request one 
 by one, if above value>0. Push one by one in ‘final’ queue.
--> Calculate the distance by its moves from one request to another. Subtracting next request-current 
+- Calculate the distance by its moves from one request to another. Subtracting next request-current 
 request and taking absolute value and adding it to one another.
--> The total distance is the final summation of all the moves.
- </body>
+- The total distance is the final summation of all the moves.
+
 ## Deep Complexity Analysis:- 
-1.) In taking pending request = 9
-2.) Checking if the pending request is> or lesser than current head = 9
-3.) If ‘t’ elements is lesser than current head then for shorting it = t(t-1)
-4.) Then n-t elements is greater than current head, then for shorting it = (n-t)(n-t-1)
-5.) For pushing scanned request in final queue = n
-6.) For calculating distance = n-1
+- In taking pending request = 9
+- Checking if the pending request is> or lesser than current head = 9
+- If ‘t’ elements is lesser than current head then for shorting it = t(t-1)
+- Then n-t elements is greater than current head, then for shorting it = (n-t)(n-t-1)
+- For pushing scanned request in final queue = n
+- For calculating distance = n-1
 
 TOTAL = 9+9+t^2-t+n^2-2nt-n+t+n+2n-1 = (17+2t^2)+3n+n^2 = n^2+3n(ignoring smaller terms)
 ### Complexity = O(n^2)
 
 ## Boundary Condition :-
-1.) Number of requests : 0 < = N < = 4999
-2.) Value of the cylinders : 0 < C < 5000
+- Number of requests : 0 < = N < = 4999
+- Value of the cylinders : 0 < C < 5000
 
 ## B.] 
 
