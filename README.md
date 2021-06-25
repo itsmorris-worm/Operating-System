@@ -16,6 +16,7 @@ and forth to access the disk. In above problem a disk is provided with 5000 cyli
 being carried out. The algorithm has to be design in such a way that the user needs to calculate how much 
 total distance(in terms of cylinder ) the user needs to travel.
 ## Steps:
+<body>
 -> Take the current and the previous request from the userit will give us direction to move and the 
 current head.
 -> Take a queue ‘que’ and take the pending request as input.                                                                                                                     -> Take a queue ‘left’ to separate the request lesser then current head.
@@ -33,7 +34,7 @@ by one, if above value>0. Push one by one in ‘final’ queue.
 -> Calculate the distance by its moves from one request to another. Subtracting next request-current 
 request and taking absolute value and adding it to one another.
 -> The total distance is the final summation of all the moves.
-
+ </body>
 ## Deep Complexity Analysis:- 
 1.) In taking pending request = 9
 2.) Checking if the pending request is> or lesser than current head = 9
