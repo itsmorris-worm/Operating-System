@@ -33,7 +33,6 @@ by one, if above value>0. Push one by one in ‘final’ queue.
 - Calculate the distance by its moves from one request to another. Subtracting next request-current 
 request and taking absolute value and adding it to one another.
 - The total distance is the final summation of all the moves.
-
 ## Deep Complexity Analysis: 
 - In taking pending request = 9
 - Checking if the pending request is> or lesser than current head = 9
@@ -42,9 +41,8 @@ request and taking absolute value and adding it to one another.
 - For pushing scanned request in final queue = n
 - For calculating distance = n-1
 
-TOTAL = 9+9+t^2-t+n^2-2nt-n+t+n+2n-1 = (17+2t^2)+3n+n^2 = n^2+3n(ignoring smaller terms)
-### Complexity = O(n^2)
-
+ Total = 9+9+t^2-t+n^2-2nt-n+t+n+2n-1 = (17+2t^2)+3n+n^2 = n^2+3n (ignoring smaller terms)
+#### Complexity = O(n^2)
 ## Boundary Condition :-
 - Number of requests : 0 < = N < = 4999
 - Value of the cylinders : 0 < C < 5000
